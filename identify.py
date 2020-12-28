@@ -14,12 +14,8 @@ while True:
     faces=faceCascade.detectMultiScale(gray, 1.2,5)
     for(x,y,w,h) in faces:
         Id, conf = recognizer.predict(gray[y:y+h,x:x+w])
-        if Id==89:
-            Id="kanishka"
         elif Id==1:
             Id="Narendra Modi"
-        elif Id==7:
-            Id="Laxmi Gupta"
         else:
             Id="unknown"
         cv2.rectangle(im, (x, y), (x + w, y + h), (0, 260, 0), 7)
